@@ -28,18 +28,22 @@ export default class Invoice extends BaseEntity implements AggregateRoot {
     this._itens = props.items;
   }
 
-  get name(): string {
+  get getName(): string {
     return this._name;
   }
 
-  get document(): string {
+  get getDocument(): string {
     return this._document;
   }
 
-  get address(): Address {
+  get getAddress(): Address {
     return this._address;
   }
-  get itens(): Product[] {
+  get getItens(): Product[] {
     return this._itens;
+  }
+
+  get getTotal(): number {
+    return this._itens.reduce((acc, item) => (acc += item.price), 0);
   }
 }

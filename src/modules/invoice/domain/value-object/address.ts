@@ -2,37 +2,58 @@ import ValueObject from "../../../@shared/domain/value-object/value-object.inter
 
 type AddressProps = {
   street: string;
-  number: number;
-  zip: string;
+  number: string;
   city: string;
+  zipCode: string;
+  complement: string;
+  state: string;
 };
 
 export default class Address implements ValueObject {
-  _street: string;
-  _number: number;
-  _zip: string;
-  _city: string;
+  private _street: string;
+  private _number: string;
+  private _zipCode: string;
+  private _city: string;
+  private _complement: string;
+  private _state: string;
 
-  constructor({ city, number, street, zip }: AddressProps) {
+  constructor({
+    city,
+    number,
+    street,
+    zipCode,
+    complement,
+    state,
+  }: AddressProps) {
     this._street = street;
     this._number = number;
-    this._zip = zip;
+    this._zipCode = zipCode;
     this._city = city;
+    this._complement = complement;
+    this._state = state;
   }
 
-  get street(): string {
+  get getStreet(): string {
     return this._street;
   }
 
-  get number(): number {
+  get getNumber(): string {
     return this._number;
   }
 
-  get zip(): number {
-    return this.zip;
+  get getZipCode(): string {
+    return this._zipCode;
   }
 
-  get city(): number {
-    return this.city;
+  get getCity(): string {
+    return this._city;
+  }
+
+  get getComplement(): string {
+    return this._complement;
+  }
+
+  get getState(): string {
+    return this._state;
   }
 }
