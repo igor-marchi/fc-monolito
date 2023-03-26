@@ -33,27 +33,27 @@ export default class Address implements ValueObject {
     this._state = state;
   }
 
-  get getStreet(): string {
+  get street(): string {
     return this._street;
   }
 
-  get getNumber(): string {
+  get number(): string {
     return this._number;
   }
 
-  get getZipCode(): string {
+  get zipCode(): string {
     return this._zipCode;
   }
 
-  get getCity(): string {
+  get city(): string {
     return this._city;
   }
 
-  get getComplement(): string {
+  get complement(): string {
     return this._complement;
   }
 
-  get getState(): string {
+  get state(): string {
     return this._state;
   }
 }

@@ -18,32 +18,32 @@ export default class Invoice extends BaseEntity implements AggregateRoot {
   private _name: string;
   private _document: string;
   private _address: Address;
-  private _itens: Product[];
+  private _items: Product[];
 
   constructor(props: InvoiceProps) {
     super(props.id, props.createdAt, props.updatedAt);
     this._name = props.name;
     this._document = props.document;
     this._address = props.address;
-    this._itens = props.items;
+    this._items = props.items;
   }
 
-  get getName(): string {
+  get name(): string {
     return this._name;
   }
 
-  get getDocument(): string {
+  get document(): string {
     return this._document;
   }
 
-  get getAddress(): Address {
+  get address(): Address {
     return this._address;
   }
-  get getItens(): Product[] {
-    return this._itens;
+  get items(): Product[] {
+    return this._items;
   }
 
-  get getTotal(): number {
-    return this._itens.reduce((acc, item) => (acc += item.price), 0);
+  get total(): number {
+    return this._items.reduce((acc, item) => (acc += item.price), 0);
   }
 }

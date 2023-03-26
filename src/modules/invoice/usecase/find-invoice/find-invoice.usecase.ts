@@ -21,28 +21,28 @@ export default class FindInvoiceUseCase {
 }
 
 function transformToOutputData(invoice: Invoice): FindInvoiceUseCaseOutputDTO {
-  const itensOutput = invoice.getItens.map((item) => ({
+  const itensOutput = invoice.items.map((item) => ({
     id: item.id.id,
     name: item.name,
     price: item.price,
   }));
 
   const addressOutput = {
-    city: invoice.getAddress.getCity,
-    complement: invoice.getAddress.getComplement,
-    number: invoice.getAddress.getNumber,
-    state: invoice.getAddress.getState,
-    street: invoice.getAddress.getStreet,
-    zipCode: invoice.getAddress.getZipCode,
+    city: invoice.address.city,
+    complement: invoice.address.complement,
+    number: invoice.address.number,
+    state: invoice.address.state,
+    street: invoice.address.street,
+    zipCode: invoice.address.zipCode,
   };
 
   const output: FindInvoiceUseCaseOutputDTO = {
     id: invoice.id.id,
-    document: invoice.getDocument,
+    document: invoice.document,
     createdAt: invoice.createdAt,
     items: itensOutput,
-    name: invoice.getName,
-    total: invoice.getTotal,
+    name: invoice.name,
+    total: invoice.total,
     address: addressOutput,
   };
 
