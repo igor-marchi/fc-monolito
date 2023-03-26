@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize-typescript";
+import Address from "../../@shared/domain/value-object/address.value-object";
 import Id from "../../@shared/domain/value-object/id.value-object";
 import Invoice from "../domain/invoice";
 import Product from "../domain/product";
-import Address from "../domain/value-object/address";
 import { InvoiceModel } from "./invoice.model";
 import InvoiceProductModel from "./invoice.product.model";
 import InvoiceRepository from "./invoice.repository";

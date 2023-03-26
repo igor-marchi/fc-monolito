@@ -1,9 +1,9 @@
 import Id from "../../../@shared/domain/value-object/id.value-object";
 import Invoice from "../../domain/invoice";
 import Product from "../../domain/product";
-import Address from "../../domain/value-object/address";
 import GenerateInvoiceUseCase from "./generate-invoice.usecase";
-import { GenerateInvoiceUseCaseInputDto } from "./generate-invoice.usecase.spec";
+import { GenerateInvoiceUseCaseInputDto } from "./generate-invoice.dto";
+import Address from "../../../@shared/domain/value-object/address.value-object";
 
 const address = new Address({
   city: "NT",
