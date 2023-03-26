@@ -92,4 +92,10 @@ describe("InvoiceRepository test", () => {
     expect(result.items[1].name).toEqual(invoice.items[1].name);
     expect(result.items[1].price).toEqual(invoice.items[1].price);
   });
+
+  it("should throw erro not found invoice", async () => {
+    const repository = new InvoiceRepository();
+    await repository.generate(invoice);
+    await expect(repository.find("2")).rejects.toThrow("Invoice not found");
+  });
 });
