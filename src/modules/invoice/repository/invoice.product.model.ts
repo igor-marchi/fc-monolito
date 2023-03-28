@@ -6,7 +6,7 @@ import {
   PrimaryKey,
   Table,
 } from "sequelize-typescript";
-import { InvoiceModel } from "./invoice.model";
+import InvoiceModel from "./invoice.model";
 import ProductModel from "./product.model";
 
 @Table({ tableName: "invoice_products", timestamps: false })

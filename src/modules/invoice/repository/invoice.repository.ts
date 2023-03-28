@@ -3,7 +3,7 @@ import Id from "../../@shared/domain/value-object/id.value-object";
 import Invoice from "../domain/invoice";
 import Product from "../domain/product";
 import InvoiceGateway from "../gateway/invoice.gateway";
-import { InvoiceModel } from "./invoice.model";
+import InvoiceModel from "./invoice.model";
 import InvoiceProductModel from "./invoice.product.model";
 import ProductModel from "./product.model";
 
